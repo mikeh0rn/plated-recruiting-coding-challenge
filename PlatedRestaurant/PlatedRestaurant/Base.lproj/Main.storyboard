@@ -91,13 +91,29 @@
                     <view key="view" contentMode="scaleToFill" id="Dig-2A-E7X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KO5-UB-SHg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="HL0-HB-MGK" id="Qu3-4z-tWf"/>
+                                    <outlet property="delegate" destination="HL0-HB-MGK" id="N2a-ls-aVP"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KO5-UB-SHg" firstAttribute="bottom" secondItem="2ZG-cM-bLJ" secondAttribute="bottom" id="2RF-9E-iHY"/>
+                            <constraint firstItem="KO5-UB-SHg" firstAttribute="trailing" secondItem="2ZG-cM-bLJ" secondAttribute="trailing" id="Gm6-P8-2mx"/>
+                            <constraint firstItem="KO5-UB-SHg" firstAttribute="leading" secondItem="2ZG-cM-bLJ" secondAttribute="leading" id="WpM-mL-U6L"/>
+                            <constraint firstItem="KO5-UB-SHg" firstAttribute="top" secondItem="2ZG-cM-bLJ" secondAttribute="top" id="ghN-cD-mGR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2ZG-cM-bLJ"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbw-qz-GE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1305" y="55"/>
+            <point key="canvasLocation" x="1304.8" y="54.422788605697157"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fzq-id-OC1">
