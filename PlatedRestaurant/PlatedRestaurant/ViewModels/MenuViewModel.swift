@@ -7,3 +7,18 @@
 //
 
 import Foundation
+import Alamofire
+import UIKit
+
+class MenuViewModel {
+    
+    private var menu = Menu()
+    
+    init(menu: Menu) {
+        self.menu = menu
+    }
+    
+    init(){
+    }
+    
+}

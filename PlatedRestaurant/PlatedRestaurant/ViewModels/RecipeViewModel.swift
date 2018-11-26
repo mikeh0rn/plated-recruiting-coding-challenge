@@ -7,3 +7,18 @@
 //
 
 import Foundation
+import Alamofire
+import UIKit
+
+class RecipeViewModel {
+    
+    private var recipe = Recipe()
+    
+    init(recipe: Recipe) {
+        self.recipe = recipe
+    }
+    
+    init(){
+    }
+
+}
