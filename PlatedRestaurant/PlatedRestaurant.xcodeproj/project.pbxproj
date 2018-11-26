@@ -110,6 +110,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7C32868E21ACA351002DC583 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7C32868F21ACA362002DC583 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		7CB0A88721AC7880004645F1 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +149,8 @@
 		7CB0A89221AC7880004645F1 /* PlatedRestaurant */ = {
 			isa = PBXGroup;
 			children = (
+				7C32868F21ACA362002DC583 /* ViewModels */,
+				7C32868E21ACA351002DC583 /* Models */,
 				7CB0A89321AC7880004645F1 /* AppDelegate.swift */,
 				7CB0A89721AC7880004645F1 /* Main.storyboard */,
 				7CB0A89A21AC7883004645F1 /* Assets.xcassets */,

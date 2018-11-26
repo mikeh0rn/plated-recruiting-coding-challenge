@@ -41,7 +41,7 @@ class MenusViewController: UIViewController, UITableViewDataSource, UITableViewD
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let recipesOnMenuVC = segue.destination as! RecipesOnMenuViewController
-        recipesOnMenuVC.stringToPass = sender
+//        recipesOnMenuVC.stringToPass = sender
     }
  
 
