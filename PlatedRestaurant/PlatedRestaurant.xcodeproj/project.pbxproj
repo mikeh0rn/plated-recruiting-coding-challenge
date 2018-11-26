@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		16460D752DADE6507DD56BED /* Pods_PlatedRestaurantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E2B16FD7E9F2BAF4085C48 /* Pods_PlatedRestaurantTests.framework */; };
 		7199805F019A5082138E25C3 /* Pods_PlatedRestaurant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE950E19E92F086AD88497DD /* Pods_PlatedRestaurant.framework */; };
+		7C32868521AC8027002DC583 /* MenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C32868421AC8027002DC583 /* MenusViewController.swift */; };
+		7C32868721AC803E002DC583 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C32868621AC803E002DC583 /* RecipesViewController.swift */; };
+		7C32868921AC8052002DC583 /* RecipesOnMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C32868821AC8052002DC583 /* RecipesOnMenuViewController.swift */; };
+		7C32868B21AC8069002DC583 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C32868A21AC8069002DC583 /* RecipeDetailViewController.swift */; };
+		7C32868D21AC809A002DC583 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C32868C21AC809A002DC583 /* HomeViewController.swift */; };
 		7CB0A89421AC7880004645F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB0A89321AC7880004645F1 /* AppDelegate.swift */; };
 		7CB0A89621AC7880004645F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB0A89521AC7880004645F1 /* ViewController.swift */; };
 		7CB0A89921AC7880004645F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB0A89721AC7880004645F1 /* Main.storyboard */; };
@@ -44,6 +49,11 @@
 		4A0BA0C069179265459ACAA5 /* Pods_PlatedRestaurantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlatedRestaurantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CACCE24314656DFF2519F15 /* Pods-PlatedRestaurantUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlatedRestaurantUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlatedRestaurantUITests/Pods-PlatedRestaurantUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		772AA1EC56F61EEF6329E3C8 /* Pods-PlatedRestaurantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlatedRestaurantUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlatedRestaurantUITests/Pods-PlatedRestaurantUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7C32868421AC8027002DC583 /* MenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenusViewController.swift; sourceTree = "<group>"; };
+		7C32868621AC803E002DC583 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
+		7C32868821AC8052002DC583 /* RecipesOnMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesOnMenuViewController.swift; sourceTree = "<group>"; };
+		7C32868A21AC8069002DC583 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		7C32868C21AC809A002DC583 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7CB0A89021AC7880004645F1 /* PlatedRestaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlatedRestaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB0A89321AC7880004645F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CB0A89521AC7880004645F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +143,11 @@
 				7CB0A89A21AC7883004645F1 /* Assets.xcassets */,
 				7CB0A89C21AC7883004645F1 /* LaunchScreen.storyboard */,
 				7CB0A89F21AC7883004645F1 /* Info.plist */,
+				7C32868421AC8027002DC583 /* MenusViewController.swift */,
+				7C32868621AC803E002DC583 /* RecipesViewController.swift */,
+				7C32868821AC8052002DC583 /* RecipesOnMenuViewController.swift */,
+				7C32868A21AC8069002DC583 /* RecipeDetailViewController.swift */,
+				7C32868C21AC809A002DC583 /* HomeViewController.swift */,
 			);
 			path = PlatedRestaurant;
 			sourceTree = "<group>";
@@ -395,8 +410,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C32868721AC803E002DC583 /* RecipesViewController.swift in Sources */,
+				7C32868921AC8052002DC583 /* RecipesOnMenuViewController.swift in Sources */,
 				7CB0A89621AC7880004645F1 /* ViewController.swift in Sources */,
 				7CB0A89421AC7880004645F1 /* AppDelegate.swift in Sources */,
+				7C32868B21AC8069002DC583 /* RecipeDetailViewController.swift in Sources */,
+				7C32868D21AC809A002DC583 /* HomeViewController.swift in Sources */,
+				7C32868521AC8027002DC583 /* MenusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

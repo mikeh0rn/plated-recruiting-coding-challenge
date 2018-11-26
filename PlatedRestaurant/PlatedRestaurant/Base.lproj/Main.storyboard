@@ -14,7 +14,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="HomeViewController" title="HomeViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="PlatedRestaurant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="PlatedRestaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="581.60000000000002" y="55.322338830584712"/>
         </scene>
-        <!--View Controller-->
+        <!--RecipesViewController-->
         <scene sceneID="wtx-L8-Yyt">
             <objects>
-                <viewController id="fQ4-qh-xNX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipesViewController" title="RecipesViewController" id="fQ4-qh-xNX" customClass="RecipesViewController" customModule="PlatedRestaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qq3-m8-Uzr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,10 +69,10 @@
             </objects>
             <point key="canvasLocation" x="582" y="770"/>
         </scene>
-        <!--View Controller-->
+        <!--RecipeDetailViewController-->
         <scene sceneID="SLg-he-hUL">
             <objects>
-                <viewController id="hUm-W4-SgK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeDetailViewController" title="RecipeDetailViewController" id="hUm-W4-SgK" customClass="RecipeDetailViewController" customModule="PlatedRestaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v2v-QK-3kJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="1305" y="770"/>
         </scene>
-        <!--View Controller-->
+        <!--MenusViewController-->
         <scene sceneID="n5d-8u-BrS">
             <objects>
-                <viewController id="HL0-HB-MGK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenusViewController" title="MenusViewController" id="HL0-HB-MGK" customClass="MenusViewController" customModule="PlatedRestaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dig-2A-E7X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
