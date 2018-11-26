@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
+
+final class Recipe {
+    
+    init(recipeJSON: JSON) {}
+    
+    init() {
+    }
+    
+}

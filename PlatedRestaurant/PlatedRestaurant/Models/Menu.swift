@@ -7,3 +7,13 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
+
+final class Menu {
+    init(menuJSON: JSON) {}
+    
+    init() {
+    }
+}
+
