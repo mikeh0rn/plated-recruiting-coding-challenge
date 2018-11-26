@@ -67,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ai-5c-8To" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="582" y="770"/>
+            <point key="canvasLocation" x="582" y="835"/>
         </scene>
         <!--RecipeDetailViewController-->
         <scene sceneID="SLg-he-hUL">
@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="moe-sb-8tB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1305" y="770"/>
+            <point key="canvasLocation" x="1321" y="836"/>
         </scene>
         <!--MenusViewController-->
         <scene sceneID="n5d-8u-BrS">
@@ -111,7 +111,7 @@
                         <viewLayoutGuide key="safeArea" id="2ZG-cM-bLJ"/>
                     </view>
                     <connections>
-                        <segue destination="2Pu-nk-ybp" kind="show" id="7Pa-a7-00g"/>
+                        <segue destination="2Pu-nk-ybp" kind="show" identifier="segueToRecipesOnMenu" id="7Pa-a7-00g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbw-qz-GE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,13 +125,28 @@
                     <view key="view" contentMode="scaleToFill" id="jeP-X5-k3c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Na-I6-rJR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4Na-I6-rJR" firstAttribute="top" secondItem="bzZ-GA-e9d" secondAttribute="top" id="6Ol-cY-lc4"/>
+                            <constraint firstAttribute="trailing" secondItem="4Na-I6-rJR" secondAttribute="trailing" id="7eV-sC-nPB"/>
+                            <constraint firstItem="4Na-I6-rJR" firstAttribute="leading" secondItem="bzZ-GA-e9d" secondAttribute="leading" id="cOY-oL-cD9"/>
+                            <constraint firstItem="4Na-I6-rJR" firstAttribute="bottom" secondItem="bzZ-GA-e9d" secondAttribute="bottom" id="r8d-w2-sf7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bzZ-GA-e9d"/>
                     </view>
+                    <connections>
+                        <segue destination="hUm-W4-SgK" kind="show" identifier="segueToRecipeDetailFromRecipesOnMenu" id="gHq-nu-cxd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7VI-sP-zYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2287" y="55"/>
+            <point key="canvasLocation" x="2129" y="54"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fzq-id-OC1">
@@ -156,4 +171,7 @@
             <point key="canvasLocation" x="-226" y="55"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="gHq-nu-cxd"/>
+    </inferredMetricsTieBreakers>
 </document>
