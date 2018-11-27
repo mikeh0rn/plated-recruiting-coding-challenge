@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 final class Recipe {
-
+    
     var id: Int? = 0
     var name: String? = ""
     var description: String? = ""

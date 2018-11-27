@@ -16,7 +16,7 @@ class APIManager {
     static let sharedInstance = APIManager()
     
     let apiToken = ""
-
+    
     private var recipeId = Int()
     
     let baseURL = "https://plated-coding-challenge.herokuapp.com/v1"
@@ -39,7 +39,6 @@ class APIManager {
                 return .success
             }
             .responseJSON { response in
-                print("response", response)
                 if let data: Data = response.data {
                     guard let json = try? JSON(data: data) else { return }
                     completion(self.menusFromJSON(incomingJSON: json))

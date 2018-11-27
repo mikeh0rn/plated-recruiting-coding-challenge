@@ -28,24 +28,13 @@ class RecipeDetailViewController: UIViewController {
                 DispatchQueue.main.async {
                     let url = URL(string: (result.image)!)
                     self.recipeImageView.kf.setImage(with: url,
-                                               placeholder: UIImage(named: "https://www.mealauthority.com/wp-content/uploads/2017/03/Plated-Logo-Sized.png?x39217"),
-                                               options: [.transition(.fade(1))],
-                                               progressBlock: nil,
-                                               completionHandler: nil)
+                                                     placeholder: UIImage(named: "https://www.mealauthority.com/wp-content/uploads/2017/03/Plated-Logo-Sized.png?x39217"),
+                                                     options: [.transition(.fade(1))],
+                                                     progressBlock: nil,
+                                                     completionHandler: nil)
                 }
             }
         })
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

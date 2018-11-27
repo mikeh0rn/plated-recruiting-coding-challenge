@@ -25,12 +25,7 @@ class RecipesOnMenuViewController: UIViewController, UITableViewDataSource, UITa
         apiManager.recipesOnMenu(id: menuId, completion: { result in
             if result.count > 0 {
                 for item in result {
-                    print(item.name)
-                    print(item.image)
-                    print(item.id)
-                    print(item.description)
                     self.recipesArray.append(item)
-                    
                 }
                 self.tableView.reloadData()
             }
@@ -43,17 +38,17 @@ class RecipesOnMenuViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecipesOnMenuTableViewCell
-
+        
         cell.recipeName.text = recipesArray[indexPath.row].name
         cell.recipeDescription.text = recipesArray[indexPath.row].description
         DispatchQueue.global(qos: .background).async {
             DispatchQueue.main.async {
                 let url = URL(string: (self.recipesArray[indexPath.row].image)!)
                 cell.recipeImg.kf.setImage(with: url,
-                                                placeholder: UIImage(named: "https://www.mealauthority.com/wp-content/uploads/2017/03/Plated-Logo-Sized.png?x39217"),
-                                                options: [.transition(.fade(1))],
-                                                progressBlock: nil,
-                                                completionHandler: nil)
+                                           placeholder: UIImage(named: "https://www.mealauthority.com/wp-content/uploads/2017/03/Plated-Logo-Sized.png?x39217"),
+                                           options: [.transition(.fade(1))],
+                                           progressBlock: nil,
+                                           completionHandler: nil)
             }
         }
         return cell

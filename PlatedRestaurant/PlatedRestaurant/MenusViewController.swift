@@ -9,7 +9,7 @@
 import UIKit
 
 class MenusViewController: UIViewController {
-
+    
     @IBOutlet weak var topButton: UIButton!
     @IBOutlet weak var bottomButton: UIButton!
     
@@ -44,11 +44,11 @@ class MenusViewController: UIViewController {
     @IBAction func buttonSelected(_ sender: UIButton) {
         performSegue(withIdentifier: "segueToRecipesOnMenu", sender: sender.tag)
     }
- 
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let recipesOnMenuVC = segue.destination as! RecipesOnMenuViewController
         recipesOnMenuVC.menuId = sender as! Int
     }
- 
-
+    
+    
 }
