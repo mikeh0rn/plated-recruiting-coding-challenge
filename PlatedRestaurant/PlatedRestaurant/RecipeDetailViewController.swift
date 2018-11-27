@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RecipeDetailViewController: UIViewController {
     
     @IBOutlet weak var recipeNameLabel: UILabel!
+    @IBOutlet weak var recipeDescriptionLabel: UILabel!
+    @IBOutlet weak var recipeImageView: UIImageView!
     
     var apiManager = APIManager.sharedInstance
     var recipeId = Int()
@@ -20,6 +23,17 @@ class RecipeDetailViewController: UIViewController {
         
         apiManager.recipe(recipeId: recipeId, completion: { result in
             self.recipeNameLabel.text = result.name
+            self.recipeDescriptionLabel.text = result.description
+            DispatchQueue.global(qos: .background).async {
+                DispatchQueue.main.async {
+                    let url = URL(string: (result.image)!)
+                    self.recipeImageView.kf.setImage(with: url,
+                                               placeholder: UIImage(named: "https://www.mealauthority.com/wp-content/uploads/2017/03/Plated-Logo-Sized.png?x39217"),
+                                               options: [.transition(.fade(1))],
+                                               progressBlock: nil,
+                                               completionHandler: nil)
+                }
+            }
         })
     }
     
