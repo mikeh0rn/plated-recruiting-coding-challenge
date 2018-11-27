@@ -10,18 +10,33 @@ import UIKit
 
 class RecipesOnMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var menusArray = [String]()
+    @IBOutlet weak var tableView: UITableView!
+    
+    var apiManager = APIManager.sharedInstance
+    var menuId = Int()
+    var recipesArray = [RecipeViewModel]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menusArray.append("Menu 1")
-        menusArray.append("Menu 2")
-        menusArray.append("Menu 3")
+        apiManager.recipesOnMenu(id: menuId, completion: { result in
+            if result.count > 0 {
+                for item in result {
+                    print(item.name)
+                    print(item.image)
+                    print(item.id)
+                    print(item.description)
+                    self.recipesArray.append(item)
+                    
+                }
+                self.tableView.reloadData()
+            }
+        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menusArray.count
+        return recipesArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -29,14 +44,14 @@ class RecipesOnMenuViewController: UIViewController, UITableViewDataSource, UITa
         if cell == nil {
             cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         }
-        cell?.textLabel?.text = menusArray[indexPath.row]
+        cell?.textLabel?.text = recipesArray[indexPath.row].name
         
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "", sender: menusArray[indexPath.row])
+        performSegue(withIdentifier: "", sender: recipesArray[indexPath.row])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
