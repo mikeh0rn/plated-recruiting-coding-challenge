@@ -21,4 +21,19 @@ class MenuViewModel {
     init(){
     }
     
+    var id: Int? {
+        if let menuId = menu.id {
+            return menuId
+        }
+        return 0
+    }
+    
+    var title: String? {
+        if let menuTitle = menu.title {
+            return menuTitle
+        }
+        return ""
+    }
+    
+    
 }
