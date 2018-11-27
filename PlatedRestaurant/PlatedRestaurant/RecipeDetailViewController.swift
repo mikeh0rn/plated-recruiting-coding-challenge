@@ -9,11 +9,18 @@
 import UIKit
 
 class RecipeDetailViewController: UIViewController {
-
+    
+    @IBOutlet weak var recipeNameLabel: UILabel!
+    
+    var apiManager = APIManager.sharedInstance
+    var recipeId = Int()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        apiManager.recipe(recipeId: recipeId, completion: { result in
+            self.recipeNameLabel.text = result.name
+        })
     }
     
 
