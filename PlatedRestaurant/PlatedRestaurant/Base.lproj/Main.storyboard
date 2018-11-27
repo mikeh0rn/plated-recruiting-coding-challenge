@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="581.60000000000002" y="55.322338830584712"/>
         </scene>
-        <!--MenusViewController-->
+        <!--Select a Menu to View-->
         <scene sceneID="fM6-EJ-2La">
             <objects>
-                <viewController storyboardIdentifier="MenusViewController" title="MenusViewController" id="lBC-G7-awh" customClass="MenusViewController" customModule="PlatedRestaurant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenusViewController" title="Select a Menu to View" id="lBC-G7-awh" customClass="MenusViewController" customModule="PlatedRestaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lu5-60-9jR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="1369" y="55"/>
         </scene>
-        <!--RecipeDetailViewController-->
+        <!--Details of your Recipe Selection-->
         <scene sceneID="SLg-he-hUL">
             <objects>
-                <viewController storyboardIdentifier="RecipeDetailViewController" title="RecipeDetailViewController" id="hUm-W4-SgK" customClass="RecipeDetailViewController" customModule="PlatedRestaurant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeDetailViewController" title="Details of your Recipe Selection" id="hUm-W4-SgK" customClass="RecipeDetailViewController" customModule="PlatedRestaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v2v-QK-3kJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,10 +207,10 @@
             </objects>
             <point key="canvasLocation" x="1320.8" y="841.52923538230891"/>
         </scene>
-        <!--RecipesOnMenuViewController-->
+        <!--Select a Recipe to See More-->
         <scene sceneID="A7M-Xh-jzQ">
             <objects>
-                <viewController storyboardIdentifier="RecipesOnMenuViewController" title="RecipesOnMenuViewController" id="2Pu-nk-ybp" customClass="RecipesOnMenuViewController" customModule="PlatedRestaurant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipesOnMenuViewController" title="Select a Recipe to See More" id="2Pu-nk-ybp" customClass="RecipesOnMenuViewController" customModule="PlatedRestaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jeP-X5-k3c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -317,10 +317,10 @@
             </objects>
             <point key="canvasLocation" x="-226" y="55"/>
         </scene>
-        <!--RecipesViewController-->
+        <!--Select a Recipe to See More-->
         <scene sceneID="KNw-Ty-Oa3">
             <objects>
-                <viewController storyboardIdentifier="RecipesViewController" title="RecipesViewController" id="tJ9-f3-z3F" customClass="RecipesViewController" customModule="PlatedRestaurant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipesViewController" title="Select a Recipe to See More" id="tJ9-f3-z3F" customClass="RecipesViewController" customModule="PlatedRestaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7d6-gL-hzH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
