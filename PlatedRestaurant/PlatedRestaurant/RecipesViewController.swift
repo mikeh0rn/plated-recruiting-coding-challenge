@@ -34,18 +34,30 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        }
-        cell?.textLabel?.text = recipesArray[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecipesOnMenuTableViewCell
         
-        return cell!
+        cell.recipeName.text = recipesArray[indexPath.row].name
+        cell.recipeDescription.text = recipesArray[indexPath.row].description
+        DispatchQueue.global(qos: .background).async {
+            DispatchQueue.main.async {
+                let url = URL(string: (self.recipesArray[indexPath.row].image)!)
+                cell.recipeImg.kf.setImage(with: url,
+                                           placeholder: UIImage(named: "https://www.mealauthority.com/wp-content/uploads/2017/03/Plated-Logo-Sized.png?x39217"),
+                                           options: [.transition(.fade(1))],
+                                           progressBlock: nil,
+                                           completionHandler: nil)
+            }
+        }
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "segueToRecipeDetail", sender: recipesArray[indexPath.row].id)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 320
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
