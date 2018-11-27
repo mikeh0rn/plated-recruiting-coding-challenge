@@ -7,7 +7,7 @@ target 'PlatedRestaurant' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Kingfisher'
-  pod 'SwiftLint'   
+  pod 'SwiftLint'
 # Pods for PlatedRestaurant
 
   target 'PlatedRestaurantTests' do
