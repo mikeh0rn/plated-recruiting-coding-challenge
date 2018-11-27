@@ -47,12 +47,12 @@ class MenusViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "", sender: menusArray[indexPath.row])
+        performSegue(withIdentifier: "segueToRecipesOnMenu", sender: menusArray[indexPath.row].id)
     }
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let recipesOnMenuVC = segue.destination as! RecipesOnMenuViewController
-//        recipesOnMenuVC.stringToPass = sender
+        recipesOnMenuVC.menuId = sender as! Int
     }
  
 
