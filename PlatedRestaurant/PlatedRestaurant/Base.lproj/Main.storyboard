@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ysY-8Y-fXd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -58,16 +58,33 @@
                     <view key="view" contentMode="scaleToFill" id="Qq3-m8-Uzr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hkL-4M-6OL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="fQ4-qh-xNX" id="WoR-2e-ANt"/>
+                                    <outlet property="delegate" destination="fQ4-qh-xNX" id="7Y3-nX-NKi"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hkL-4M-6OL" firstAttribute="bottom" secondItem="muJ-jh-zjx" secondAttribute="bottom" id="1Gc-aX-IEe"/>
+                            <constraint firstItem="hkL-4M-6OL" firstAttribute="leading" secondItem="muJ-jh-zjx" secondAttribute="leading" id="Epd-WB-tot"/>
+                            <constraint firstItem="hkL-4M-6OL" firstAttribute="top" secondItem="muJ-jh-zjx" secondAttribute="top" id="MhW-57-GbU"/>
+                            <constraint firstItem="hkL-4M-6OL" firstAttribute="trailing" secondItem="muJ-jh-zjx" secondAttribute="trailing" id="pha-zs-unt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="muJ-jh-zjx"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="hkL-4M-6OL" id="22i-qf-KhH"/>
                         <segue destination="hUm-W4-SgK" kind="show" identifier="segueToRecipeDetail" id="qKX-GV-Zob"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ai-5c-8To" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="582" y="835"/>
+            <point key="canvasLocation" x="581.60000000000002" y="834.33283358320841"/>
         </scene>
         <!--RecipeDetailViewController-->
         <scene sceneID="SLg-he-hUL">
@@ -190,6 +207,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gHq-nu-cxd"/>
+        <segue reference="qKX-GV-Zob"/>
     </inferredMetricsTieBreakers>
 </document>
