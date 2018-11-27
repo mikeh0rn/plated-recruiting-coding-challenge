@@ -11,7 +11,13 @@ import Alamofire
 import SwiftyJSON
 
 final class Menu {
-    init(menuJSON: JSON) {}
+    var id: Int? = 0
+    var title: String? = ""
+    
+    init(menuJSON: JSON) {
+        self.id = menuJSON["id"].intValue
+        self.title = menuJSON["title"].stringValue
+    }
     
     init() {
     }

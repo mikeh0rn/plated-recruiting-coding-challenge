@@ -14,7 +14,7 @@ import SwiftyJSON
 class APIManager {
     
     static let sharedInstance = APIManager()
-    let apiToken = ""
+    let apiToken = "uDTZnGR4tFGLo1Pmizvi4Att"
     private var menuId = Int()
     private var recipeId = Int()
     
@@ -23,8 +23,7 @@ class APIManager {
     var headers: HTTPHeaders {
         get {
             return [
-                "Authorization" : "Token token={\(apiToken)}",
-                "Accept": "application/json"
+                "Authorization" : "Token token=\(apiToken)"
             ]
         }
     }
@@ -39,6 +38,7 @@ class APIManager {
                 return .success
             }
             .responseJSON { response in
+                print("response", response)
                 if let data: Data = response.data {
                     guard let json = try? JSON(data: data) else { return }
                     completion(self.menusFromJSON(incomingJSON: json))
