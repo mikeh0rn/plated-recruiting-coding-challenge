@@ -8,23 +8,51 @@
 
 import UIKit
 
-class RecipesViewController: UIViewController {
-
+class RecipesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var recipesArray = [RecipeViewModel]()
+    var apiManager = APIManager.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        apiManager.recipes(completion: { result in
+            if result.count > 0 {
+                for item in result {
+                    self.recipesArray.append(item)
+                    
+                }
+                self.tableView.reloadData()
+            }
+        })
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recipesArray.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        }
+        cell?.textLabel?.text = recipesArray[indexPath.row].name
+        
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "segueToRecipeDetail", sender: recipesArray[indexPath.row].id)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let recipeDetailVC = segue.destination as! RecipeDetailViewController
+        recipeDetailVC.recipeId = sender as! Int
+    }
+    
+    
 }
+
