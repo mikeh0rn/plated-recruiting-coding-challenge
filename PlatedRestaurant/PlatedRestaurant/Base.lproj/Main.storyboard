@@ -146,6 +146,7 @@
                         <viewLayoutGuide key="safeArea" id="bzZ-GA-e9d"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="4Na-I6-rJR" id="Vvz-u0-Ub1"/>
                         <segue destination="hUm-W4-SgK" kind="show" identifier="segueToRecipeDetailFromRecipesOnMenu" id="gHq-nu-cxd"/>
                     </connections>
                 </viewController>
