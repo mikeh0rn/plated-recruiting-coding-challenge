@@ -19,31 +19,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ucl-hH-0sq">
-                                <rect key="frame" x="133" y="346" width="109" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ucl-hH-0sq">
+                                <rect key="frame" x="30" y="353" width="315" height="85"/>
+                                <color key="backgroundColor" red="1" green="0.90267259330000005" blue="0.60935874609999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="cU5-Wa-awQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="SEE MENU LIST"/>
                                 <connections>
                                     <segue destination="HL0-HB-MGK" kind="show" identifier="segueToMenus" id="WV4-JS-4lI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgZ-30-Lz3">
-                                <rect key="frame" x="126" y="384" width="122" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgZ-30-Lz3">
+                                <rect key="frame" x="30" y="454" width="315" height="85"/>
+                                <color key="backgroundColor" red="0.71458727899999996" green="0.28496425749999998" blue="0.27606907190000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="afe-XG-fCw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="SEE ALL RECIPES"/>
                                 <connections>
                                     <segue destination="tJ9-f3-z3F" kind="show" identifier="segueToRecipes" id="Lp1-zk-20M"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plated Restaurant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihi-uM-JsQ">
-                                <rect key="frame" x="119" y="271" width="137" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plated-Logo-Sized" translatesAutoresizingMaskIntoConstraints="NO" id="hb6-c2-cmJ">
+                                <rect key="frame" x="37" y="132" width="300" height="168"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTAURANT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzu-ft-d8g">
+                                <rect key="frame" x="30" y="301" width="307" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <color key="textColor" red="0.13249390059999999" green="0.57230681179999998" blue="0.57230681179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mzu-ft-d8g" firstAttribute="top" secondItem="hb6-c2-cmJ" secondAttribute="bottom" constant="1" id="102-eJ-S3B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MgZ-30-Lz3" secondAttribute="trailing" constant="30" id="8jt-OS-q92"/>
+                            <constraint firstItem="Ucl-hH-0sq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Aqd-4R-xbW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hb6-c2-cmJ" secondAttribute="trailing" constant="38" id="FIG-wk-4XY"/>
+                            <constraint firstItem="mzu-ft-d8g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Iun-Nv-OSJ"/>
+                            <constraint firstItem="MgZ-30-Lz3" firstAttribute="top" secondItem="Ucl-hH-0sq" secondAttribute="bottom" constant="16" id="NJe-Oh-V2a"/>
+                            <constraint firstItem="hb6-c2-cmJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="68" id="QKK-1x-y2u"/>
+                            <constraint firstItem="Ucl-hH-0sq" firstAttribute="top" secondItem="mzu-ft-d8g" secondAttribute="bottom" constant="16" id="SJd-UV-lOt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mzu-ft-d8g" secondAttribute="trailing" constant="38" id="TiD-Me-b65"/>
+                            <constraint firstItem="MgZ-30-Lz3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="jov-rq-qAF"/>
+                            <constraint firstItem="hb6-c2-cmJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="mHF-E3-bxN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ucl-hH-0sq" secondAttribute="trailing" constant="30" id="xZl-Gl-b5W"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="zgt-Si-m91"/>
@@ -298,6 +324,9 @@
             <point key="canvasLocation" x="582" y="842"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Plated-Logo-Sized" width="300" height="168"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YGG-zX-lJ8"/>
     </inferredMetricsTieBreakers>
