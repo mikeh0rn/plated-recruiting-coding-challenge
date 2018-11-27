@@ -11,6 +11,7 @@ import UIKit
 class RecipesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var recipesArray = [RecipeViewModel]()
     var apiManager = APIManager.sharedInstance
@@ -19,12 +20,14 @@ class RecipesViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         
         apiManager.recipes(completion: { result in
+            self.activityIndicator.startAnimating()
             if result.count > 0 {
                 for item in result {
                     self.recipesArray.append(item)
                     
                 }
                 self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
             }
         })
     }

@@ -12,6 +12,7 @@ import Kingfisher
 class RecipesOnMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var apiManager = APIManager.sharedInstance
     var menuId = Int()
@@ -20,14 +21,15 @@ class RecipesOnMenuViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = false
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        self.activityIndicator.startAnimating()
         apiManager.recipesOnMenu(id: menuId, completion: { result in
             if result.count > 0 {
                 for item in result {
                     self.recipesArray.append(item)
                 }
                 self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
             }
         })
     }

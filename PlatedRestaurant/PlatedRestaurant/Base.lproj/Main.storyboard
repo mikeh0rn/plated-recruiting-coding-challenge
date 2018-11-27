@@ -170,6 +170,10 @@
                                     <constraint firstAttribute="height" constant="194" id="Kn6-xt-Z5r"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9hw-8s-5jK">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.13249390059999999" green="0.57230681179999998" blue="0.57230681179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -178,8 +182,10 @@
                             <constraint firstItem="TFK-JJ-kis" firstAttribute="top" secondItem="F3w-uD-nXc" secondAttribute="bottom" constant="24" id="ATj-on-SYT"/>
                             <constraint firstItem="JCj-gt-c8r" firstAttribute="leading" secondItem="69C-vY-9cC" secondAttribute="leading" constant="16" id="LME-sF-Qlm"/>
                             <constraint firstItem="KPf-hH-fcE" firstAttribute="top" secondItem="69C-vY-9cC" secondAttribute="top" constant="38" id="LN0-uy-bgX"/>
+                            <constraint firstItem="9hw-8s-5jK" firstAttribute="centerX" secondItem="F3w-uD-nXc" secondAttribute="centerX" id="Nfa-8A-hJn"/>
                             <constraint firstItem="TFK-JJ-kis" firstAttribute="leading" secondItem="69C-vY-9cC" secondAttribute="leading" constant="50" id="TXo-1b-Epe"/>
                             <constraint firstItem="69C-vY-9cC" firstAttribute="trailing" secondItem="JCj-gt-c8r" secondAttribute="trailing" constant="16" id="XYZ-bL-VHf"/>
+                            <constraint firstItem="9hw-8s-5jK" firstAttribute="centerY" secondItem="TFK-JJ-kis" secondAttribute="centerY" id="eOE-Cd-zCQ"/>
                             <constraint firstItem="69C-vY-9cC" firstAttribute="trailing" secondItem="F3w-uD-nXc" secondAttribute="trailing" constant="16" id="i6P-Zu-w4C"/>
                             <constraint firstItem="TFK-JJ-kis" firstAttribute="top" secondItem="F3w-uD-nXc" secondAttribute="bottom" constant="24" id="olK-VZ-eQR"/>
                             <constraint firstItem="69C-vY-9cC" firstAttribute="trailing" secondItem="TFK-JJ-kis" secondAttribute="trailing" constant="50" id="otV-sS-v6P"/>
@@ -191,6 +197,7 @@
                         <viewLayoutGuide key="safeArea" id="69C-vY-9cC"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="9hw-8s-5jK" id="4bD-R3-Q6r"/>
                         <outlet property="recipeDescriptionLabel" destination="JCj-gt-c8r" id="ZLb-7z-Gxq"/>
                         <outlet property="recipeImageView" destination="TFK-JJ-kis" id="nyt-2K-cbE"/>
                         <outlet property="recipeNameLabel" destination="F3w-uD-nXc" id="7Pu-d0-iug"/>
@@ -262,17 +269,24 @@
                                     <outlet property="delegate" destination="2Pu-nk-ybp" id="975-pQ-USb"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="S7X-YI-1Ik">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.13249390059999999" green="0.57230681179999998" blue="0.57230681179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4Na-I6-rJR" firstAttribute="top" secondItem="bzZ-GA-e9d" secondAttribute="top" id="6Ol-cY-lc4"/>
                             <constraint firstAttribute="trailing" secondItem="4Na-I6-rJR" secondAttribute="trailing" id="7eV-sC-nPB"/>
+                            <constraint firstItem="S7X-YI-1Ik" firstAttribute="centerX" secondItem="4Na-I6-rJR" secondAttribute="centerX" id="SFd-1h-UDt"/>
+                            <constraint firstItem="S7X-YI-1Ik" firstAttribute="centerY" secondItem="jeP-X5-k3c" secondAttribute="centerY" id="Zei-Tu-wL7"/>
                             <constraint firstItem="4Na-I6-rJR" firstAttribute="leading" secondItem="bzZ-GA-e9d" secondAttribute="leading" id="cOY-oL-cD9"/>
                             <constraint firstItem="4Na-I6-rJR" firstAttribute="bottom" secondItem="bzZ-GA-e9d" secondAttribute="bottom" id="r8d-w2-sf7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bzZ-GA-e9d"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="S7X-YI-1Ik" id="W3T-HS-gOy"/>
                         <outlet property="tableView" destination="4Na-I6-rJR" id="Vvz-u0-Ub1"/>
                         <segue destination="hUm-W4-SgK" kind="show" identifier="segueToRecipeDetailFromRecipesOnMenu" id="gHq-nu-cxd"/>
                     </connections>
@@ -365,17 +379,24 @@
                                     <outlet property="delegate" destination="tJ9-f3-z3F" id="CvE-Oa-ICN"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="j9a-ne-Jk3">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.13249390059999999" green="0.57230681179999998" blue="0.57230681179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RRX-jf-TH8" firstAttribute="bottom" secondItem="FA4-zA-b6U" secondAttribute="bottom" id="8pw-sp-2hs"/>
                             <constraint firstItem="RRX-jf-TH8" firstAttribute="top" secondItem="FA4-zA-b6U" secondAttribute="top" id="DnA-Kd-3A4"/>
                             <constraint firstItem="RRX-jf-TH8" firstAttribute="leading" secondItem="FA4-zA-b6U" secondAttribute="leading" id="Inb-Xw-d6s"/>
+                            <constraint firstItem="j9a-ne-Jk3" firstAttribute="centerX" secondItem="RRX-jf-TH8" secondAttribute="centerX" id="MOW-YM-FGg"/>
+                            <constraint firstItem="j9a-ne-Jk3" firstAttribute="centerY" secondItem="7d6-gL-hzH" secondAttribute="centerY" id="eXw-Ov-yyd"/>
                             <constraint firstAttribute="trailing" secondItem="RRX-jf-TH8" secondAttribute="trailing" id="jDA-xp-TBa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FA4-zA-b6U"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="j9a-ne-Jk3" id="fIQ-Bj-lxb"/>
                         <outlet property="tableView" destination="RRX-jf-TH8" id="FZ3-5Y-Bca"/>
                         <segue destination="hUm-W4-SgK" kind="show" identifier="segueToRecipeDetail" id="YGG-zX-lJ8"/>
                     </connections>
@@ -389,6 +410,6 @@
         <image name="Plated-Logo-Sized" width="300" height="168"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gHq-nu-cxd"/>
+        <segue reference="YGG-zX-lJ8"/>
     </inferredMetricsTieBreakers>
 </document>

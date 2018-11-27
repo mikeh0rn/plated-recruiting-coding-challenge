@@ -14,6 +14,7 @@ class RecipeDetailViewController: UIViewController {
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var recipeDescriptionLabel: UILabel!
     @IBOutlet weak var recipeImageView: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var apiManager = APIManager.sharedInstance
     var recipeId = Int()
@@ -22,6 +23,7 @@ class RecipeDetailViewController: UIViewController {
         super.viewDidLoad()
         
         apiManager.recipe(recipeId: recipeId, completion: { result in
+            self.activityIndicator.startAnimating()
             self.recipeNameLabel.text = result.name
             self.recipeDescriptionLabel.text = result.description
             DispatchQueue.global(qos: .background).async {
@@ -34,7 +36,9 @@ class RecipeDetailViewController: UIViewController {
                                                      completionHandler: nil)
                 }
             }
+            self.activityIndicator.stopAnimating()
         })
+        
     }
     
 }
