@@ -10,14 +10,25 @@ import UIKit
 
 class MenusViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var menusArray = [String]()
+    @IBOutlet weak var tableView: UITableView!
+    
+    var menusArray = [MenuViewModel]()
+    var apiManager = APIManager.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        menusArray.append("Italian")
-        menusArray.append("Chinese")
-        menusArray.append("Mexican")
+        
+        apiManager.menus(completion: { result in
+            if result.count > 0 {
+                for item in result {
+                    print(item.id)
+                    print(item.title)
+                    self.menusArray.append(item)
+                    
+                }
+                self.tableView.reloadData()
+            }
+        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,7 +40,7 @@ class MenusViewController: UIViewController, UITableViewDataSource, UITableViewD
         if cell == nil {
             cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         }
-        cell?.textLabel?.text = menusArray[indexPath.row]
+        cell?.textLabel?.text = menusArray[indexPath.row].title
         
         return cell!
     }
