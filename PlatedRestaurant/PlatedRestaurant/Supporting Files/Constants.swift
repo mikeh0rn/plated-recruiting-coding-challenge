@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+class Constants {
+    static let sharedInstance = Constants()
+    static let API_KEY = "uDTZnGR4tFGLo1Pmizvi4Att"
+}

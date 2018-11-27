@@ -15,7 +15,7 @@ class APIManager {
     
     static let sharedInstance = APIManager()
     
-    let apiToken = ""
+    let apiToken = Constants.API_KEY
     
     private var recipeId = Int()
     
