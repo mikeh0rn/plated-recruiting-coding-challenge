@@ -20,7 +20,8 @@ class RecipesOnMenuViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         apiManager.recipesOnMenu(id: menuId, completion: { result in
             if result.count > 0 {
                 for item in result {

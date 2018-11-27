@@ -14,8 +14,9 @@ import SwiftyJSON
 class APIManager {
     
     static let sharedInstance = APIManager()
-    let apiToken = "uDTZnGR4tFGLo1Pmizvi4Att"
-    private var menuId = Int()
+    
+    let apiToken = ""
+
     private var recipeId = Int()
     
     let baseURL = "https://plated-coding-challenge.herokuapp.com/v1"
@@ -65,9 +66,9 @@ class APIManager {
     }
     
     
-    func recipesOnMenu(completion: @escaping ([RecipeViewModel]) -> Void) {
+    func recipesOnMenu(id: Int, completion: @escaping ([RecipeViewModel]) -> Void) {
         
-        let url = baseURL + "/menus/\(menuId)/recipes.json"
+        let url = baseURL + "/menus/\(id)/recipes.json"
         
         Alamofire.request(url, headers: headers)
             

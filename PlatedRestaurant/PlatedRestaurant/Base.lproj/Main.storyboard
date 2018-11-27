@@ -29,7 +29,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="SEE MENU LIST"/>
                                 <connections>
-                                    <action selector="didTapMenuList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KAV-fS-IDN"/>
+                                    <segue destination="lBC-G7-awh" kind="show" id="yA6-br-bu3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgZ-30-Lz3">
@@ -77,6 +77,61 @@
             </objects>
             <point key="canvasLocation" x="581.60000000000002" y="55.322338830584712"/>
         </scene>
+        <!--MenusViewController-->
+        <scene sceneID="fM6-EJ-2La">
+            <objects>
+                <viewController storyboardIdentifier="MenusViewController" title="MenusViewController" id="lBC-G7-awh" customClass="MenusViewController" customModule="PlatedRestaurant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lu5-60-9jR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pQ1-F1-M30">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPj-Cs-L69">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="279.5"/>
+                                        <color key="backgroundColor" red="0.71458727899999996" green="0.28496425749999998" blue="0.27606907190000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="PLATED">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonSelected:" destination="lBC-G7-awh" eventType="touchUpInside" id="Hfl-7M-VqU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufF-0v-twx">
+                                        <rect key="frame" x="0.0" y="279.5" width="375" height="279.5"/>
+                                        <color key="backgroundColor" red="0.13249390059999999" green="0.57230681179999998" blue="0.57230681179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="PLATED">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonSelected:" destination="lBC-G7-awh" eventType="touchUpInside" id="Ddf-LI-Y57"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KVQ-kn-wU0" firstAttribute="trailing" secondItem="pQ1-F1-M30" secondAttribute="trailing" id="1h0-Q4-sfl"/>
+                            <constraint firstItem="KVQ-kn-wU0" firstAttribute="bottom" secondItem="pQ1-F1-M30" secondAttribute="bottom" id="NMj-f2-jai"/>
+                            <constraint firstItem="pQ1-F1-M30" firstAttribute="leading" secondItem="KVQ-kn-wU0" secondAttribute="leading" id="PZd-YG-GPc"/>
+                            <constraint firstItem="pQ1-F1-M30" firstAttribute="top" secondItem="KVQ-kn-wU0" secondAttribute="top" id="t84-Va-t98"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KVQ-kn-wU0"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomButton" destination="ufF-0v-twx" id="UVi-hf-JY1"/>
+                        <outlet property="topButton" destination="fPj-Cs-L69" id="jh4-9G-gUI"/>
+                        <segue destination="2Pu-nk-ybp" kind="show" identifier="segueToRecipesOnMenu" id="i5c-BB-cix"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NyN-wW-XeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1369" y="55"/>
+        </scene>
         <!--RecipeDetailViewController-->
         <scene sceneID="SLg-he-hUL">
             <objects>
@@ -104,103 +159,6 @@
             </objects>
             <point key="canvasLocation" x="1321" y="842"/>
         </scene>
-        <!--Home Pop Up View Controller-->
-        <scene sceneID="QKo-Bh-kIp">
-            <objects>
-                <viewController storyboardIdentifier="HomePopUpViewController" id="Mfp-aV-0Ro" customClass="HomePopUpViewController" customModule="PlatedRestaurant" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="G9A-db-m6L">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKh-TP-AHl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLATED RESTAURANT APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7s-T0-tUt">
-                                        <rect key="frame" x="79.5" y="14" width="216.5" height="26"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.71458727899999996" green="0.28496425749999998" blue="0.27606907190000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="K7s-T0-tUt" firstAttribute="top" secondItem="CKh-TP-AHl" secondAttribute="top" constant="14" id="1Lm-C4-KMc"/>
-                                    <constraint firstItem="K7s-T0-tUt" firstAttribute="centerX" secondItem="CKh-TP-AHl" secondAttribute="centerX" id="CHG-Ua-GqB"/>
-                                    <constraint firstItem="K7s-T0-tUt" firstAttribute="centerY" secondItem="CKh-TP-AHl" secondAttribute="centerY" id="KJj-CC-JCr"/>
-                                </constraints>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="wSJ-42-C3D">
-                                <rect key="frame" x="0.0" y="255" width="375" height="45"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTQ-Kd-tXD">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="45"/>
-                                        <color key="backgroundColor" red="0.71458727899999996" green="0.28496425749999998" blue="0.27606907190000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="LUNCH">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didSelectLunchButton:" destination="Mfp-aV-0Ro" eventType="touchUpInside" id="Wss-3R-4YV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qB9-zj-6tM">
-                                        <rect key="frame" x="188" y="0.0" width="187" height="45"/>
-                                        <color key="backgroundColor" red="0.71458727899999996" green="0.28496425749999998" blue="0.27606907190000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="DINNER">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didSelectDinnerButton:" destination="Mfp-aV-0Ro" eventType="touchUpInside" id="LcB-HH-jrC"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="xeZ-KS-R1z"/>
-                                </constraints>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUx-6V-p0J">
-                                <rect key="frame" x="34" y="146" width="307" height="101"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="101" id="nCI-dE-g1p"/>
-                                </constraints>
-                                <string key="text">Please select below if you
-would like to see recipes from
-our Lunch or Dinner Menus!</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="430749-plated" translatesAutoresizingMaskIntoConstraints="NO" id="yn0-W1-pHL">
-                                <rect key="frame" x="113" y="59" width="149" height="82"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="82" id="Pei-Zk-YTh"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="CKh-TP-AHl" firstAttribute="leading" secondItem="wSJ-42-C3D" secondAttribute="leading" id="0Ge-0D-V7H"/>
-                            <constraint firstItem="CKh-TP-AHl" firstAttribute="centerX" secondItem="yn0-W1-pHL" secondAttribute="centerX" id="0lR-ej-SeG"/>
-                            <constraint firstItem="wSJ-42-C3D" firstAttribute="leading" secondItem="F0Q-eh-zRO" secondAttribute="leading" id="5qF-hH-o0h"/>
-                            <constraint firstItem="CKh-TP-AHl" firstAttribute="top" secondItem="F0Q-eh-zRO" secondAttribute="top" id="JaR-dK-xxV"/>
-                            <constraint firstItem="F0Q-eh-zRO" firstAttribute="bottom" secondItem="wSJ-42-C3D" secondAttribute="bottom" id="KB5-oC-AuB"/>
-                            <constraint firstItem="yn0-W1-pHL" firstAttribute="leading" secondItem="F0Q-eh-zRO" secondAttribute="leading" constant="113" id="MMO-0e-stq"/>
-                            <constraint firstItem="yn0-W1-pHL" firstAttribute="centerX" secondItem="vUx-6V-p0J" secondAttribute="centerX" id="Njv-TJ-6R1"/>
-                            <constraint firstItem="F0Q-eh-zRO" firstAttribute="trailing" secondItem="wSJ-42-C3D" secondAttribute="trailing" id="OMH-r3-VXu"/>
-                            <constraint firstAttribute="trailing" secondItem="CKh-TP-AHl" secondAttribute="trailing" id="Sw9-hJ-ir2"/>
-                            <constraint firstItem="CKh-TP-AHl" firstAttribute="leading" secondItem="G9A-db-m6L" secondAttribute="leading" id="W3M-gs-j76"/>
-                            <constraint firstItem="vUx-6V-p0J" firstAttribute="leading" secondItem="F0Q-eh-zRO" secondAttribute="leading" constant="34" id="epb-hX-3Kl"/>
-                            <constraint firstItem="yn0-W1-pHL" firstAttribute="top" secondItem="CKh-TP-AHl" secondAttribute="bottom" constant="5" id="fCB-Ac-1JK"/>
-                            <constraint firstItem="vUx-6V-p0J" firstAttribute="top" secondItem="yn0-W1-pHL" secondAttribute="bottom" constant="5" id="mWp-Mg-Oe8"/>
-                            <constraint firstItem="wSJ-42-C3D" firstAttribute="top" secondItem="vUx-6V-p0J" secondAttribute="bottom" constant="8" symbolic="YES" id="sKk-Fq-KDL"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="F0Q-eh-zRO"/>
-                    </view>
-                    <size key="freeformSize" width="375" height="300"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q8D-J2-7mC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1340" y="55"/>
-        </scene>
         <!--RecipesOnMenuViewController-->
         <scene sceneID="A7M-Xh-jzQ">
             <objects>
@@ -210,7 +168,7 @@ our Lunch or Dinner Menus!</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Na-I6-rJR">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="320" id="WcF-6i-7Pd" customClass="RecipesOnMenuTableViewCell" customModule="PlatedRestaurant" customModuleProvider="target">
@@ -280,7 +238,7 @@ our Lunch or Dinner Menus!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7VI-sP-zYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2202" y="54"/>
+            <point key="canvasLocation" x="2082" y="54"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fzq-id-OC1">
@@ -387,7 +345,6 @@ our Lunch or Dinner Menus!</string>
         </scene>
     </scenes>
     <resources>
-        <image name="430749-plated" width="810" height="456"/>
         <image name="Plated-Logo-Sized" width="300" height="168"/>
     </resources>
     <inferredMetricsTieBreakers>

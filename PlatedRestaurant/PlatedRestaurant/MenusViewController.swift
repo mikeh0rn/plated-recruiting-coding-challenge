@@ -8,46 +8,41 @@
 
 import UIKit
 
-class MenusViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MenusViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var topButton: UIButton!
+    @IBOutlet weak var bottomButton: UIButton!
     
     var menusArray = [MenuViewModel]()
     var apiManager = APIManager.sharedInstance
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewDidAppear(_ animated: Bool) {
         apiManager.menus(completion: { result in
             if result.count > 0 {
                 for item in result {
-                    print(item.id)
-                    print(item.title)
                     self.menusArray.append(item)
-                    
+                    if self.menusArray.count == 2 {
+                        self.populateButtonData()
+                    }
                 }
-                self.tableView.reloadData()
             }
         })
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menusArray.count
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        }
-        cell?.textLabel?.text = menusArray[indexPath.row].title
+    func populateButtonData() {
+        self.topButton.setTitle(self.menusArray[0].title, for: UIControl.State.normal)
+        self.topButton.tag = self.menusArray[0].id ?? 0
         
-        return cell!
+        self.bottomButton.setTitle(self.menusArray[1].title, for: UIControl.State.normal)
+        self.bottomButton.tag = self.menusArray[1].id ?? 0
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "segueToRecipesOnMenu", sender: menusArray[indexPath.row].id)
+    @IBAction func buttonSelected(_ sender: UIButton) {
+        performSegue(withIdentifier: "segueToRecipesOnMenu", sender: sender.tag)
     }
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

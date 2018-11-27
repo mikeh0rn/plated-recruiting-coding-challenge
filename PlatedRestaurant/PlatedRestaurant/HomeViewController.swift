@@ -16,12 +16,6 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func didTapMenuList(_ sender: UIButton) {
-        let popup = HomePopUpViewController.create()
-        let sbPopup = SBCardPopupViewController(contentViewController: popup)
-        sbPopup.show(onViewController: self)
-    }
-    
 
     /*
     // MARK: - Navigation
